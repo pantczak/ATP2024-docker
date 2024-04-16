@@ -6,9 +6,16 @@ services:
       - "8000:8080"
     volumes:
       - jira_data:/var/atlassian/application-data/jira
+    environment:
+      - JVM_MINIMUM_MEMORY=2048m
+      - JVM_MAXIMUM_MEMORY=4096m
   jira_db:
     image: postgres:15-alpine
-    container_name: jira_db #FIXME
+    container_name: jira_db
+    environment:
+      - POSTGRES_DB=jira_db
+      - POSTGRES_USER=jira
+      - POSTGRES_PASSWORD=sphere
 
 volumes:
   jira_data:
