@@ -4,3 +4,5 @@ services:
     image: atlassian/jira-software:9.12
     ports:
       - "8000:8080"
+    volumes:
+      - jira_data:/var/atlassian/application-data/jira #FIXME
