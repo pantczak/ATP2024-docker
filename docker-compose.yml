@@ -16,6 +16,9 @@ services:
       - POSTGRES_DB=jira_db
       - POSTGRES_USER=jira
       - POSTGRES_PASSWORD=sphere
+    volumes:
+      - jira_db_data:/var/lib/postgresql/data
 
 volumes:
   jira_data:
+  jira_db_data:
