@@ -79,3 +79,13 @@ docker compose up
 
 #Usunięcie konfiguracji docker compose
 docker compose down
+
+#Checkout tag
+git checkout v1.0.0-base
+git checkout v1.1.0-ports
+git checkout v1.2.0-volume
+git checkout v1.3.0-volume-fix
+git checkout v1.4.0-psql
+git checkout v1.5.0-env
+git checkout v1.6.0-psql-volume
+git checkout v2.0.0-all
