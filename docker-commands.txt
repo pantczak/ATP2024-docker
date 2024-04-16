@@ -1,0 +1,81 @@
+# Klonowanie repozytorium 
+git clone https://github.com/pantczak/ATP2024-docker.git
+
+# Wersja dockera
+docker --version
+
+#Pobranie obrazu
+docker pull nginx:alpine
+
+#Uruchomienie kontenera
+docker run nginx:alpine
+
+#Lista uruchomionych kontenerów
+docker ps
+
+#Zatrzymanie kontenera
+docker stop [ID]
+
+#Restart kontenera
+docker restart [ID]
+
+#Wykonanie polecenia w kontenerze
+docker run nginx:alpine
+docker ps
+docker exec [ID] ls -la
+
+#Lista pobranych obrazow
+docker image ls
+
+#Uruchomienie kontenera z nazwą
+docker run --name mycontainer nginx:alpine
+
+#Uruchomienie kontenera w trybie detached
+docker run -d nginx:alpine
+
+#Uruchomienie kontenera z interaktywnym wyjściem
+docker run -it nginx:alpine
+
+#Mapowanie portów w kontenerze
+docker run -p 8081:80 nginx:alpine
+
+#Usunięcie kontenera po wyłączeniu
+docker run --name cont1 nginx:alpine
+docker run --name cont2 --rm nginx:alpine
+
+#Podłączenie wolumenu
+docker run -v ./html:/usr/share/nginx/html -p 8082:80 nginx:alpine
+
+#Łączenie argumentów
+docker run --name contnginx -v ./html:/usr/share/nginx/html -p 8081:80 -p 8082:80 --rm -d nginx:alpine
+
+#Tworzenie wolumenu
+docker volume create vol1
+
+#Lista wolumenów
+docker volume list
+
+#Wyświetlenie konfiguracji wolumenu
+docker volume inspect vol1
+
+#Usunięcie wolumenu
+docker volume rm vol1
+
+#Zbudowanie obrazu
+docker build -t lynx-google .
+
+#Uruchomienie obrazu
+docker run -it lynx-google
+
+#Instalacja docker compose
+https://docs.docker.com/compose/install/linux/#install-using-the-repository
+
+#Docker compose (wordpress)
+docker compose -f docker-compose.wordpress.yml up
+docker compose -f docker-compose.wordpress.yml down
+
+#Uruchomienie docker compose
+docker compose up
+
+#Usunięcie konfiguracji docker compose
+docker compose down
