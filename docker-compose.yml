@@ -5,4 +5,7 @@ services:
     ports:
       - "8000:8080"
     volumes:
-      - jira_data:/var/atlassian/application-data/jira #FIXME
+      - jira_data:/var/atlassian/application-data/jira
+
+volumes:
+  jira_data:
